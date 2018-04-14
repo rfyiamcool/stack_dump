@@ -49,4 +49,3 @@ func writeStack(buf []byte) {
 	fd.Write(buf)
 	fd.Close()
 }
-
