@@ -1,4 +1,4 @@
-package dumpStack
+package dumpstack
 
 import (
 	"os"
@@ -20,6 +20,8 @@ var (
 	stdFile = "./stack.log"
 )
 
+// SetupStackTrap start
+// args = filepath
 func SetupStackTrap(args ...string) {
 	if len(args) > 0 {
 		stdFile = args[0]
@@ -48,4 +50,9 @@ func writeStack(buf []byte) {
 	fd.WriteString(now + " stdout:" + "\n\n")
 	fd.Write(buf)
 	fd.Close()
+}
+
+// Dump dump stack
+func Dump() {
+	dumpStacks()
 }
